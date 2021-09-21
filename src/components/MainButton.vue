@@ -1,7 +1,7 @@
 <template>
   <div>
     {{ msg }}
-    <p class="text-h1">KURDE</p>
+    <p class="text-h1 border-3 rounded-xl border-blue-500">KURDE</p>
   </div>
 </template>
 
