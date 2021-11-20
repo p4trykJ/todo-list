@@ -10,6 +10,7 @@
     "prettier": "prettier --check ."
   },
   "dependencies": {
+    "firebase": "^9.5.0",
     "vue": "^3.2.6"
   },
   "devDependencies": {
