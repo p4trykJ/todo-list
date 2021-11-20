@@ -16,6 +16,7 @@
     "eslint:recommended",
     "@vue/typescript/recommended",
     "@vue/prettier/@typescript-eslint",
+    "@vue/eslint-config-prettier",
     "@vue/prettier"
   ],
   "parserOptions": {

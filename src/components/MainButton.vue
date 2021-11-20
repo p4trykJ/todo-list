@@ -3,15 +3,22 @@
     <div>
       {{ inputValue }}
     </div>
-    <input class="border-3" v-model="inputValue" />
-    <p class="text-h1 border-3 rounded-xl border-blue-500">{{ msg }}</p>
+    <input v-model="inputValue" class="border-3" />
+    <p class="text-h1 border-3 rounded-xl border-blue-500">
+      {{ msg }}
+    </p>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-defineProps<{ msg: string }>();
+defineProps({
+  msg: {
+    type: String,
+    default: 'aaa',
+  },
+});
 defineEmits(['click']);
 
 let inputValue = ref(123);
