@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import { addTodo } from '@/services/todos';
+import { addTodo } from '@/firebase/todos';
 import { ref } from 'vue';
 
 defineProps({

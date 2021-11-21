@@ -1,5 +1,5 @@
 import { Todo } from '@/models/Todo';
-import { firebaseDb } from '@/services/firebase';
+import { firebaseDb } from '@/firebase';
 import {
   collection,
   getDocs,

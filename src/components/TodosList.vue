@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
+import { getTodos, todos, updateTodo } from '@/firebase/todos';
 import { Todo } from '@/models/Todo';
-import { getTodos, todos, updateTodo } from '@/services/todos';
 import { onMounted } from 'vue';
 
 const getItems = async () => {
