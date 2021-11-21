@@ -1,8 +1,20 @@
 <template>
   <ul>
-    <li v-for="todo in todos" :key="todo.name">
-      <span>{{ todo.text }}</span>
-      <span><input v-model="todo.isCompleted" type="checkbox" /></span>
+    <li v-for="todo in todos" :key="todo.id">
+      <form>
+        <span>
+          <input
+            v-model="todo.text"
+            @change="updateIsCompleted(todo.id, todo)"
+          />
+        </span>
+        <span
+          ><input
+            v-model="todo.isCompleted"
+            type="checkbox"
+            @change="updateIsCompleted(todo.id, todo)"
+        /></span>
+      </form>
     </li>
   </ul>
   {{ todos }}
@@ -10,14 +22,19 @@
 
 <script setup lang="ts">
 import { Todo } from '@/models/Todo';
-import { getTodos } from '@/services/todosItems';
-import { ref, onMounted } from 'vue';
-
-const todos = ref<Todo[]>([]);
+import { getTodos, todos, updateTodo } from '@/services/todos';
+import { onMounted } from 'vue';
 
 const getItems = async () => {
-  const todosArr = await getTodos();
-  todos.value = todosArr;
+  await getTodos();
+};
+
+const updateIsCompleted = async (id: string, todo: Todo) => {
+  try {
+    await updateTodo(id, todo);
+  } catch (error) {
+    alert(error);
+  }
 };
 
 onMounted(getItems);
