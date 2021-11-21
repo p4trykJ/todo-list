@@ -22,23 +22,13 @@
 import { addTodo } from '@/firebase/todos';
 import { ref } from 'vue';
 
-defineProps({
-  msg: {
-    type: String,
-    default: 'aaa',
-  },
-});
-defineEmits(['click']);
-
 let inputValue = ref('');
 
-// eslint-disable-next-line no-undef
-const addTodoLocal = async (e: SubmitEvent): Promise<void> => {
+const addTodoLocal = async (e: Event): Promise<void> => {
   try {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    await addTodo({ text: form.text.value, isCompleted: false });
-    form.reset();
+    await addTodo(inputValue.value);
+    (e.target as HTMLFormElement).reset();
   } catch (error) {
     alert(error);
   }

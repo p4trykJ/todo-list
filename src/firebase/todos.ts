@@ -1,10 +1,10 @@
-import { Todo } from '@/models/Todo';
 import { firebaseDb } from '@/firebase';
+import { Todo } from '@/models/Todo';
 import {
-  collection,
-  getDocs,
   addDoc,
+  collection,
   doc,
+  getDocs,
   writeBatch,
 } from '@firebase/firestore';
 import { ref } from 'vue';
@@ -25,11 +25,11 @@ const getTodos = async (): Promise<void> => {
   }
 };
 
-const addTodo = async (todo: Todo): Promise<void> => {
+const addTodo = async (text: string): Promise<void> => {
   try {
-    const docRef = await addDoc(todosCollection, todo);
-    console.log('Document written with ID: ', docRef.id);
-    todos.value.push(todo);
+    const todo = { isCompleted: false, text };
+    const { id } = await addDoc(todosCollection, todo);
+    todos.value.push({ ...todo, id });
   } catch (error) {
     alert(error);
   }
@@ -39,7 +39,8 @@ const updateTodo = async (id: string, data: Todo): Promise<void> => {
   try {
     const batch = writeBatch(firebaseDb);
     const ref = doc(firebaseDb, 'todos', id);
-    batch.update(ref, data as { [key: string]: any });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    batch.update(ref, data as { [x: string]: any });
     await batch.commit();
   } catch (error) {
     alert(error);

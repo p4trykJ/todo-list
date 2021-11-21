@@ -1,7 +1,7 @@
 <template>
   <main>
     <todos-list></todos-list>
-    <add-todo msg="msgValue"></add-todo>
+    <add-todo></add-todo>
   </main>
 </template>
 
