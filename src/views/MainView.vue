@@ -1,11 +1,11 @@
 <template>
   <main>
-    <main-list></main-list>
-    <main-button msg="msgValue"></main-button>
+    <todos-list></todos-list>
+    <add-todo msg="msgValue"></add-todo>
   </main>
 </template>
 
 <script setup lang="ts">
-import MainButton from '@/components/AddTodo.vue';
-import MainList from '@/components/MainList.vue';
+import AddTodo from '@/components/AddTodo.vue';
+import TodosList from '@/components/TodosList.vue';
 </script>
