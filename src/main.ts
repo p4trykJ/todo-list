@@ -1,6 +1,9 @@
+import 'virtual:windi-devtools';
+import 'virtual:windi.css';
 import { createApp } from 'vue';
 import App from './App.vue';
-import 'virtual:windi.css';
-import 'virtual:windi-devtools';
+import { setColorModeOnInit } from './utils/changeColorMode';
 
 createApp(App).mount('#app');
+
+setColorModeOnInit();
