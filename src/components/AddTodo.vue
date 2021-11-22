@@ -1,21 +1,15 @@
 <template>
-  <div>
-    <form
-      class="border-orange-600 border-t-1 mt-10 pt-2"
-      @submit="addTodoLocal"
-    >
-      <ul>
-        <li>
-          <label for="text">Name:</label>
-          <input v-model="inputValue" name="text" type="text" />
-        </li>
-        <li>
-          <button type="submit">Dodaj</button>
-        </li>
-      </ul>
-    </form>
-    <form></form>
-  </div>
+  <form @submit="addTodoLocal">
+    <ul>
+      <li>
+        <label for="text">Name:</label>
+        <input v-model="inputValue" name="text" type="text" />
+      </li>
+      <li>
+        <button type="submit">Dodaj</button>
+      </li>
+    </ul>
+  </form>
 </template>
 
 <script lang="ts" setup>

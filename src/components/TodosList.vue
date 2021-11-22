@@ -1,30 +1,37 @@
 <template>
   <ul>
-    <li v-for="todo in todos" :key="todo.id">
+    <li v-for="item in items" :key="item.id">
       <form>
         <span>
-          <input v-model="todo.text" @change="updateTodoItem(todo.id, todo)" />
+          <input v-model="item.text" @change="updateTodoItem(item.id, item)" />
         </span>
         <span
           ><input
-            v-model="todo.isCompleted"
+            v-model="item.isCompleted"
+            class="dark:text-green-400"
             type="checkbox"
-            @change="updateTodoItem(todo.id, todo)"
+            @change="updateTodoItem(item.id, item)"
         /></span>
       </form>
     </li>
   </ul>
-  {{ todos }}
 </template>
 
 <script setup lang="ts">
-import { getTodos, todos, updateTodo } from '@/firebase/todos';
+import { updateTodo } from '@/firebase/todos';
 import { Todo } from '@/models/Todo';
-import { onMounted } from 'vue';
+import { PropType } from 'vue';
 
-// const getItems = async () => {
-// await getTodos();
-// };
+defineProps({
+  items: {
+    type: Array as PropType<Todo[]>,
+    default: () => [],
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+});
 
 const updateTodoItem = async (id: string, todo: Todo) => {
   try {
@@ -33,6 +40,4 @@ const updateTodoItem = async (id: string, todo: Todo) => {
     alert(error);
   }
 };
-
-onMounted(getTodos);
 </script>
