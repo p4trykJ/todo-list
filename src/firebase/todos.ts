@@ -6,7 +6,7 @@ import {
   doc,
   getDocs,
   writeBatch,
-} from '@firebase/firestore';
+} from 'firebase/firestore';
 import { ref } from 'vue';
 
 const todosCollection = collection(firebaseDb, 'todos');
