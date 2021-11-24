@@ -1,5 +1,8 @@
 <template>
-  <button class="btn rounded-md bg-primary" :class="[computedBgColor, size]">
+  <button
+    class="btn rounded-md flex justify-center items-center"
+    :class="[computedBgColor, size]"
+  >
     <slot></slot>
   </button>
 </template>
@@ -27,7 +30,7 @@ const computedBgColor = computed((): string => {
 });
 </script>
 
-<style scoped lang="postcss">
+<style scoped lang="scss">
 .btn {
   &.s {
     height: 15px;

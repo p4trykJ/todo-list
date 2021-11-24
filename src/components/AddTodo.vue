@@ -29,7 +29,7 @@ const addTodoLocal = async (e: Event): Promise<void> => {
 };
 </script>
 
-<style scoped lang="postcss">
+<style scoped lang="scss">
 div {
   p {
     color: red;
