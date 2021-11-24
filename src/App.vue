@@ -1,8 +1,6 @@
 <template>
   <main class="w-full h-full">
-    <rounded-button color="primary" size="xl">
-      <span style="font-size: 4px">&#10094;</span>
-    </rounded-button>
+    <rounded-button color="primary" size="xl"> witam </rounded-button>
     <todo-list-view></todo-list-view>
   </main>
 </template>
@@ -14,9 +12,9 @@ import TodoListView from '@/views/TodoListView.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 </script>
 
-<style lang="scss">
+<style>
 #app {
-  // height: 100vh;
+  height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
