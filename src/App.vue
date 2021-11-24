@@ -1,6 +1,6 @@
 <template>
   <main class="w-full h-full">
-    <rounded-button color="primary" size="large"> witam </rounded-button>
+    <rounded-button color="primary" size="xl"> witam </rounded-button>
     <todo-list-view></todo-list-view>
   </main>
 </template>

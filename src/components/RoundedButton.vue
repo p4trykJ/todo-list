@@ -1,5 +1,5 @@
 <template>
-  <button class="btn rounded-l bg-primary" :class="[computedBgColor, size]">
+  <button class="btn rounded-md bg-primary" :class="[computedBgColor, size]">
     <slot></slot>
   </button>
 </template>
@@ -9,8 +9,8 @@ import { computed, toRefs } from 'vue';
 const props = defineProps({
   size: {
     type: String,
-    default: 'medium',
-    validator: (value: string) => ['small', 'medium', 'large'].includes(value),
+    default: 'm',
+    validator: (value: string) => ['s', 'm', 'l', 'xl'].includes(value),
   },
   color: {
     type: String,
@@ -29,17 +29,21 @@ const computedBgColor = computed((): string => {
 
 <style scoped lang="postcss">
 .btn {
-  &.small {
+  &.s {
     height: 15px;
     width: 15px;
   }
-  &.medium {
+  &.m {
     height: 20px;
     width: 20px;
   }
-  &.large {
+  &.l {
     height: 30px;
     width: 30px;
+  }
+  &.xl {
+    height: 45px;
+    width: 45px;
   }
 }
 </style>
