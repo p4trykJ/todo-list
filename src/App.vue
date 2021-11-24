@@ -12,7 +12,7 @@ import TodoListView from '@/views/TodoListView.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 </script>
 
-<style>
+<style lang="scss">
 #app {
   height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;

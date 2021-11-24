@@ -27,7 +27,7 @@ const computedBgColor = computed((): string => {
 });
 </script>
 
-<style scoped lang="postcss">
+<style scoped lang="scss">
 .btn {
   &.s {
     height: 15px;
