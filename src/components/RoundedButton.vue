@@ -33,14 +33,17 @@ const computedBgColor = computed((): string => {
     height: 15px;
     width: 15px;
   }
+
   &.m {
     height: 20px;
     width: 20px;
   }
+
   &.l {
     height: 30px;
     width: 30px;
   }
+
   &.xl {
     height: 45px;
     width: 45px;
