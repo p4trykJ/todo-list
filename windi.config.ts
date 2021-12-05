@@ -6,6 +6,7 @@ export default defineConfig({
     extend: {
       colors: {
         primary: colors.pink['300'],
+        secondary: colors.blueGray['300'],
       },
     },
   },

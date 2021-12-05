@@ -1,5 +1,13 @@
 <template>
-  <button class="btn rounded-md bg-primary" :class="[computedBgColor, size]">
+  <button
+    class="btn rounded-md bg-secondary px-2 py-1 w-auto"
+    :class="[
+      computedBgColor,
+      size,
+      { '!w-auto': isAutoWidth },
+      { '!h-auto': isAutoHeight },
+    ]"
+  >
     <slot></slot>
   </button>
 </template>
@@ -7,6 +15,14 @@
 <script lang="ts" setup>
 import { computed, toRefs } from 'vue';
 const props = defineProps({
+  isAutoWidth: {
+    type: Boolean,
+    default: true,
+  },
+  isAutoHeight: {
+    type: Boolean,
+    default: true,
+  },
   size: {
     type: String,
     default: 'm',
