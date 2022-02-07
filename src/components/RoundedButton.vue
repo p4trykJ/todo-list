@@ -1,11 +1,14 @@
 <template>
   <button
-    class="btn rounded-md bg-secondary px-2 py-1 w-auto"
+    class="btn rounded-md px-2 py-1 flex justify-center items-center"
     :class="[
-      computedBgColor,
       size,
-      { '!w-auto': isAutoWidth },
-      { '!h-auto': isAutoHeight },
+      {
+        '!w-auto': isAutoWidth,
+        '!h-auto': isAutoHeight,
+        [computedBgColor]: !outlined,
+        outlined,
+      },
     ]"
   >
     <slot></slot>
@@ -28,6 +31,10 @@ const props = defineProps({
     default: 'm',
     validator: (value: string) => ['s', 'm', 'l', 'xl'].includes(value),
   },
+  outlined: {
+    type: Boolean,
+    default: false,
+  },
   color: {
     type: String,
     default: 'primary',
@@ -36,7 +43,7 @@ const props = defineProps({
   },
 });
 
-const { color } = toRefs(props);
+const { color, isAutoHeight, isAutoWidth, outlined } = toRefs(props);
 
 const computedBgColor = computed((): string => {
   return `bg-${color.value}`;
@@ -61,8 +68,8 @@ const computedBgColor = computed((): string => {
   }
 
   &.xl {
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     :color="color"
     :is-auto-height="false"
     :is-auto-width="false"
-    size="xl"
+    :size="size"
   >
     <slot>
       {{ computedKnownIcon }}
@@ -54,23 +54,19 @@ const computedKnownIcon = computed((): string => {
 <style scoped lang="scss">
 .btn {
   &.s {
-    height: 15px;
-    width: 15px;
+    font-size: 10px;
   }
 
   &.m {
-    height: 20px;
-    width: 20px;
+    font-size: 15px;
   }
 
   &.l {
-    height: 30px;
-    width: 30px;
+    font-size: 20px;
   }
 
   &.xl {
-    height: 45px;
-    width: 45px;
+    font-size: 25px;
   }
 }
 </style>
