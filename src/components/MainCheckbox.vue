@@ -8,48 +8,16 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue';
-defineEmits({
-  'update:modelValue': (payload: boolean): boolean => {
-    if (payload !== undefined) {
-      return true;
-    }
-    return false;
-  },
-});
-defineProps({
-  modelValue: {
-    type: Boolean,
-  },
-});
-// import { computed, toRefs } from 'vue';
-// const props = defineProps({
-//   isAutoWidth: {
-//     type: Boolean,
-//     default: true,
-//   },
-//   isAutoHeight: {
-//     type: Boolean,
-//     default: true,
-//   },
-//   size: {
-//     type: String,
-//     default: 'm',
-//     validator: (value: string) => ['s', 'm', 'l', 'xl'].includes(value),
-//   },
-//   color: {
-//     type: String,
-//     default: 'primary',
-//     validator: (value: string) =>
-//       ['primary', 'secondary', 'tertiary'].includes(value),
-//   },
-// });
+interface Props {
+  modelValue: boolean;
+}
 
-// const { color } = toRefs(props);
+interface Emits {
+  (e: 'update:modelValue', value: boolean): boolean;
+}
 
-// const computedBgColor = computed((): string => {
-//   return `bg-${color.value}`;
-// });
+defineEmits<Emits>();
+defineProps<Props>();
 </script>
 
 <style scoped lang="scss">
