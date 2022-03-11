@@ -16,8 +16,9 @@
     "eslint:recommended",
     "@vue/typescript/recommended",
     "@vue/prettier/@typescript-eslint",
-    "@vue/eslint-config-prettier",
-    "@vue/prettier"
+    // "@vue/eslint-config-prettier",
+    // "@vue/prettier",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaVersion": 2021
